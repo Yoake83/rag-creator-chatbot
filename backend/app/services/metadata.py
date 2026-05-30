@@ -146,7 +146,7 @@ def _get_instagram_followers_apify(url: str) -> int | None:
         run = client.actor("apify/instagram-profile-scraper").call(
             run_input={"usernames": [username]}
         )
-        items = list(client.dataset(run["defaultDatasetId"]).iterate_items())
+        items = list(client.dataset(run.get("defaultDatasetId")).iterate_items())
         if items:
             return items[0].get("followersCount")
     except Exception as e:
