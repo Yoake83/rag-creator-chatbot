@@ -22,7 +22,7 @@ class VideoMetadata(BaseModel):
     engagement_rate: Optional[float] = None   # computed
     hashtags: List[str] = []
     upload_date: Optional[str] = None
-    duration_seconds: Optional[int] = None
+    duration_seconds: Optional[float] = None
     thumbnail_url: Optional[str] = None
 
 
